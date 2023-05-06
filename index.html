@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/jsbarcode@latest/dist/JsBarcode.all.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/@selectize/selectize/dist/js/selectize.js"></script>
+  <link rel="stylesheet" href="node_modules/@selectize/selectize/dist/css/selectize.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Etiquetas </title>
+</head>
+
+<body>
+  <section id="myModal" class="modal">
+    <div class="modal-content" style="width: 50%;">
+      <div class="logo-titulo">
+        <h1>Portal de preciadores</h1>
+        <img id="logo" src="https://i.postimg.cc/y8j19qhw/logo.png">
+      </div>
+      <div class="botones-contenedor">
+        <h3>Instrucciones </h3>
+        <p>En este sitio se crearan las hojas de impresión para obtener etiquetas con los productos. Para hacerlo sólo
+          necesitas seguir algunos pasos</p><br>
+        <ol>
+          <li>Elegir un tipo de filtro:<br><br>
+            <input type="radio" id="btnClave" name="opcion" value="clave">
+            <label for="btnClave"><b>Clave: </b>escoge un rango de productos.</label><br>
+            <input type="radio" id="btnMarca" name="opcion" value="marca">
+            <label for="btnMarca"><b>Marca: </b>escribe la marca y selecciona.</label><br><br>
+          <li>Cuando hayas filtrado, presiona el botón de <b>crear etiquetas.</b></li>
+          <li><b>Espera</b> un par de segundos mientras se cargan los datos de tus etiquetas y se preparan para
+            imprimir.</li>
+        </ol><br>
+      </div>
+      <div style="display:none" id="contenedorSelect" class="contenedorSelect">
+        <select id="my-select" name="my-select" data-selectize></select>
+        <select id="my-select2" name="my-select" data-selectize></select>
+        <button id="borrarDatos">Borrar datos</button>
+      </div>
+      <div style="display:none" id="contenedorMARCA" class="contenedorSelect">
+        <select id="my-select3" name="my-select" data-selectize></select>
+        <button id="ReiniciarMarca">Reiniciar</button>
+      </div>
+      <div>
+        <button style="display:none" id="CrearEtiquetas">Crear etiquetas</button>
+        <p id="parametro1"></p>
+        <p id="parametro2"></p>
+        <h6 id="error"></h6>
+      </div>
+    </div>
+  </section>
+  <div id="modal-instrucciones-imprimir" class="modal">
+    <div class="modal-contenido">
+      <span class="close">&times;</span>
+      <h2>¡Hola!</h2>
+      <h3>Para obtener tus etiquetas presiona el botón de imprimir.</h3>
+      <h4>Puede que tarde un poco, pero ten paciencia por favor.</h4>
+      <p>*Recuerda que al hacerlo tienes que configurar la impresión en modo horizontal y tamaño carta. Verifica que
+        tengas papel y ¡éxito!* </p>
+      <button onclick="cerrarModal()">Imprimir etiquetas</button>
+    </div>
+  </div>
+  <!-- <div id="espera-mientras carga">
+    <div class="loader"></div>
+    <div class="titulo"><h1 class="h1">Espera pronto pondré instrucciones</h1></div></div> -->
+  <div class="root">
+    <div class="contenedor hide">
+      <div class="contenedor_logo_claveSAP">
+        <img src="https://i.postimg.cc/y8j19qhw/logo.png" class="logo">
+        <div class="clave_sap">AAB-001</div>
+        <svg id="code"></svg>
+      </div>
+      <div class="descripcion">JARRA ESPUMADORA BARISTA SPACE DE ACERO INOXIDABLE TORNASOL 350ml</div>
+      <div class="contenedor_precio_sin_descuento">
+        <p class="de">de <del> $ 4,555</del> </p>
+        <p class="precio_"> </p>
+      </div>
+      <div class="contenedor_precio_descuento">
+        <p class="a">a</p>
+        <div class="precio_descuento">$ 5,555</div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+
+</html>
