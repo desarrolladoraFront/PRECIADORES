@@ -6,7 +6,7 @@
     body{
         font-family: 'Poppins', sans-serif;
     }
-    div{
+    /* div{
         margin: 4px;
     }
     .root{
@@ -25,7 +25,7 @@
     }
     .descripcion{
         height: 15%;
-        font-size: 12px;
+        font-size: 9px;
     }
     .descripcion_50caracteres{
         height: 15%;
@@ -77,7 +77,7 @@
     svg{
       width: 100px;
       height: 30px;
-    }
+    } */
     .hide{
       display: none !important;
     }
@@ -104,12 +104,12 @@
   .modal { 
   display: flex;/*Modal qué aparece al inicio: Portal de preciadores.*/
   flex-direction: column;
-  align-items: center;
+  align-items:flex-start;
   justify-content: center;
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 50px;
+  padding-top: 10px;
   left: 0;
   top: 0; 
   width: 100%;
@@ -119,9 +119,10 @@
 }
 .modal-contenido {
   background-color: #fefefe;
+  box-shadow: 5px 10px #FDC420;    
+  border-radius: 10px;
   margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
+  padding: 40px;
   width: 80%;
   max-width: 600px;
   text-align: center;
@@ -139,10 +140,17 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif
 }
 
 button:hover {
-  background-color: #FDC420;
+  background-color: #FE9114;
+}
+#CrearEtiquetas{
+  background-color: #E508FC;
+}
+#CrearEtiquetas:hover{
+ background-color:  #A10EB0;
 }
 .row {
     display: flex;
@@ -150,9 +158,11 @@ button:hover {
     height: .30cm; ;
 }
 .modal-content { /* Modal: Portal de preciadores*/
-  
   background-color: #fefefe;
   margin:auto;
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
   padding: 40px;
   width: 60%;
   box-shadow: 5px 10px #FDC420;    
@@ -194,4 +204,9 @@ input[type="radio"]:not(:checked) + label {
   /* Estilo para botones desseleccionados */
   opacity: 0.5;
   /* Agrega cualquier otro estilo que desees */
+}
+.contenedor_bts_borraryreiniciar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
