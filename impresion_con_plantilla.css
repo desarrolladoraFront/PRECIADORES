@@ -11,14 +11,16 @@ div{
     margin-left: 2mm;
 }
 
-/* @page :left {
-  margin-left: .4cm;
-}*/
-
 @page {
+  size: A4; /* Tamaño de la hoja */
+  margin: 2cm; /* Márgenes de la hoja */
+  orientation: portrait; /* Orientación: landscape para horizontal, portrait para vertical */
+}
+
+/* @page {
   margin: none;
   margin-top: 1cm;
-} 
+}  */
 
 .root{
   display: flex;
@@ -33,6 +35,7 @@ div{
   padding: 1px;
   width: 6.4cm;
   height: 2.6cm;
+  background-color: blue;
 }
 .descripcion{
     height: 15%;

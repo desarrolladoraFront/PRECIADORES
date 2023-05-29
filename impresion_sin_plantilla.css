@@ -1,3 +1,8 @@
+@page {
+  size: A4; /* Tamaño de la hoja */
+  margin: 2cm; /* Márgenes de la hoja */
+  orientation: landscape; /* Orientación: landscape para horizontal, portrait para vertical */
+}
 div{
     margin: 4px;
 }

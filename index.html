@@ -10,7 +10,7 @@
   <script src="node_modules/@selectize/selectize/dist/js/selectize.js"></script>
   <link rel="stylesheet" href="node_modules/@selectize/selectize/dist/css/selectize.css">
   <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="impresion_sin_plantilla.css">
+  <link id="stylesheet" rel="stylesheet" href="impresion_sin_plantilla.css">
   <title>Etiquetas </title>
 </head>
 
@@ -27,10 +27,12 @@
           necesitas seguir algunos pasos</p><br>
         <ol>
           <li>Define el tipo de papel con el que cuentas en tu impresora:<br><br>
-          <input type="checkbox" id="checkboxPlantilla">
-          <label for="checkboxPlantilla">Plantilla de etiquetas. (Si quieres verla presiona <a href="https://www.uline.mx/LabelTemplates/S-16643.pdf?webSyncID=1b9c737e-66e6-1a8a-3e63-0028501e432e&sessionGUID=58b0aad4-ce1c-dc9c-0654-cca45b226674">aquí</a>)</label><br>
-          <input type="checkbox" id="checkbox">
-          <label for="checkbox">Formato de impresión</label><br><br></li>
+            <input type="checkbox" id="checkboxPlantilla">
+            <label for="checkboxPlantilla">Plantilla de etiquetas. (Sí necesitas verificar presiona <a
+                href="https://www.uline.mx/LabelTemplates/S-16643.pdf?webSyncID=1b9c737e-66e6-1a8a-3e63-0028501e432e&sessionGUID=58b0aad4-ce1c-dc9c-0654-cca45b226674">aquí</a>)</label><br>
+            <input type="checkbox" id="checkbox" value="checked">
+            <label for="checkbox">Formato de impresión</label><br><br>
+          </li>
           <li>Elegir un tipo de filtro:<br><br>
             <input type="radio" id="btnClave" name="opcion" value="clave">
             <label for="btnClave"><b>Clave: </b>escoge un rango de productos.</label><br>
@@ -40,7 +42,8 @@
           <li><b>Espera</b> un par de segundos mientras se cargan los datos de tus etiquetas y se preparan para
             imprimir.</li>
           <li>Si te equivocaste, no te preocupes, presiona el boton <b>reiniciar.</b></li>
-          <li>Sí aún te quedan dudas, puedes ver este <a href="https://www.youtube.com/watch?v=5I97D1x0Vgg&list=WL&index=27">video.</a></li>
+          <li>Sí aún te quedan dudas, puedes ver este <a
+              href="https://www.youtube.com/watch?v=5I97D1x0Vgg&list=WL&index=27">video.</a></li>
         </ol><br>
       </div>
       <div style="display:none" id="contenedorSelect" class="contenedorSelect">
@@ -63,7 +66,8 @@
   <div id="modal-instrucciones-imprimir" class="modal">
     <div class="modal-contenido">
       <span class="close">&times;</span>
-      <p>Para obtener tus etiquetas presiona el botón de imprimir, si te equivocaste, presiona "Quiero regresar".</p><br>
+      <p>Para obtener tus etiquetas presiona el botón de imprimir, si te equivocaste, presiona "Quiero regresar".</p>
+      <br>
       <h3 id="parametro1"></h3>
       <h3 id="parametro2"></h3><br>
       <p>*Recuerda que al hacerlo tienes que configurar la impresión en modo horizontal y tamaño carta. Verifica que
@@ -74,7 +78,10 @@
   </div>
   <div id="espera-mientras carga">
     <div class="loader"></div>
-    <div class="titulo"><h1 class="h1">Espera la información está siendo cargada.</h1></div></div>
+    <div class="titulo">
+      <h1 class="h1">Espera la información está siendo cargada.</h1>
+    </div>
+  </div>
   <div class="root">
     <div class="contenedor hide">
       <div class="contenedor_logo_claveSAP">

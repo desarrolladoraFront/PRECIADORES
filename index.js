@@ -245,8 +245,13 @@ const buttons = document.querySelector(".contenedor_bts_borraryreiniciar");
           alert("No puedes seleccionar ambos elementos");
           checkboxPlantilla.checked = false;
         }
-        console.log('aquí voy a cambiar las características de la impresión.')
-        
+        checkbox.checked = false;
+        let stylesheet = document.getElementById('stylesheet');
+        if (stylesheet.href.endsWith('impresion_sin_plantilla.css')){
+          stylesheet.href = 'impresion_con_plantilla.css';
+        }  else {
+          stylesheet.href = 'impresion_sin_plantilla.css';
+        }      
       });
       
       checkbox.addEventListener("change", function() {
@@ -254,7 +259,6 @@ const buttons = document.querySelector(".contenedor_bts_borraryreiniciar");
           alert("No puedes seleccionar ambos elementos");
           checkbox.checked = false;
         }
-        // Desmarca el otro checkbox
         checkboxPlantilla.checked = false;
       });
       
