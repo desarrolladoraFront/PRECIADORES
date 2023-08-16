@@ -195,9 +195,9 @@ async function obtenerProductos(apiURL) {
         const descripcion = document.createElement('p');
         descripcion.classList.add('descripcion');
         descripcion.textContent = producto.name;
-        let menos50 = producto.name.substring(0, 40);
-        descripcion.textContent = menos50;
-        console.log(typeof menos50);
+        // let menos50 = producto.name.substring(0, 40);
+        // descripcion.textContent = menos50;
+        //console.log(typeof menos50);
   
         const precio = document.createElement('div');
         precio.classList.add('precio');
@@ -243,9 +243,9 @@ async function obtenerProductos(apiURL) {
         const descripcion = document.createElement('p');
         descripcion.classList.add('descripcion');
         descripcion.textContent = producto.name;
-        let menos50 = producto.name.substring(0, 40);
-        descripcion.textContent = menos50;
-        console.log(typeof menos50);
+        // let menos50 = producto.name.substring(0, 40);
+        // descripcion.textContent = menos50;
+        //console.log(typeof menos50);
   
         const contenedorPrecioSinDescuento = document.createElement('div');
         contenedorPrecioSinDescuento.classList.add('contenedor_precio_sin_descuento');
@@ -432,10 +432,10 @@ const createSELECTclave = () => {
     //Método para imprimir
     window.print();
   
-    // Recarga la página después de 1 segundo (1000 milisegundos)
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
+    // // Recarga la página después de 1 segundo (1000 milisegundos)
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 1000);
   }
   
 
