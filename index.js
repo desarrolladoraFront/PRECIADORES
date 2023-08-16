@@ -451,7 +451,7 @@ const gup = function (name, url) {
 }
 // document.addEventListener('DOMContentLoaded', function () {
 //     const urlParams = new URLSearchParams(window.location.search);
-//     const apiUrl = (gup('q') == 'public') ? 'https://lista-de-precios.cafeetrusca.com/api/v1/venta/lista_precio/1' : (gup('q') == 'boletin_activo') ? 'https://lista-de-precios.cafeetrusca.com/api/v2/boletin/actual/1' : (gup('q') == 'boletin_proximo') ? 'https://lista-de-precios.cafeetrusca.com/api/v2/boletin/proximo/1' : (gup('q') == 'fronterizo') ? 'https://lista-de-precios.cafeetrusca.com/api/v1/venta/lista_precio/5' :''  ;
+//     const apiUrl = (gup('q') == 'public') ? 'https://lista-de-precios.cafeetrusca.com/api/v1/venta/lista_precio/1' : (gup('q') == 'boletin_activo') ? 'https://lista-de-precios.cafeetrusca.com/api/v2/boletin/actual/1' : (gup('q') == 'boletin_proximo') ? 'https://lista-de-precios.cafeetrusca.com/api/v2/boletin/proximo/1' : (gup('q') == 'fronterizo') ? 'https://lista-de-precios.cafeetrusca.com/api/v1/venta/lista_precio/5' :(gup('q') == 'publico-futuro') ? 'https://lista-de-precios.cafeetrusca.com/api/v2/venta/futuro/1' :''  ;
 
 //     if (apiUrl) {
 //         obtenerMarcas();
