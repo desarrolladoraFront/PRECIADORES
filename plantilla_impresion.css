@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;800&display=swap');
+
+@page {
+  size: Letter;
+  /* Tamaño de la hoja */
+  margin-top: 1.1cm;
+  margin-bottom: 1.4cm;
+  /* Márgenes de la hoja */
+  orientation: portrait;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.root {
+  display: grid;
+  grid-template-columns: repeat(3, 6.9cm);
+  /* 3 columnas de 6.9 cm cada una */
+  grid-template-rows: repeat(10, 2.5cm);
+  /* 10 filas de 2.5 cm cada una */
+  column-gap: 0;
+  /* Espacio entre los rectángulos */
+  row-gap: 0;
+  /* Sin espacio entre las filas */
+  width: 20.7cm;
+  /* Ancho de la cuadrícula (3 columnas * 6.7 cm + 2 * 3 mm de espacio) */
+  height: 25cm;
+  /* Alto de la cuadrícula (10 filas * 2.5 cm + 9 * 3 mm de espacio) */
+  background-color: white;
+}
+
+.contenedor {
+  margin-right: 3mm;
+  /* Margen izquierdo de 3mm para los rectángulos */
+  margin-left: 1mm;
+  width: 6.7cm;
+  height: 2.4cm;
+  padding: 1px;
+}
+
+.container-root {
+  margin-left: 14.1732pt;
+  /* Aproximadamente .5 mm */
+  margin-right: 14.1732pt;
+  margin-top: 1.5cm;
+  margin-bottom: 1.5cm;
+  /* width: 8.5in;  Ancho de la hoja tamaño carta */
+  /* height: 11in; Alto de la hoja tamaño carta */
+}
+
+.salto-linea {
+  clear: both;
+  /* Limpia los flujos flotantes antes del salto de línea */
+  page-break-after: always;
+}
+
+.margen-superior {
+  grid-column: span 3;
+  height: 1.5cm;
+  background-color: white;
+}
+
+.descripcion {
+  height: 10%;
+  font-size: 8px;
+  margin-left: 20px;
+  margin-top: -4px;
+}
+
+.descripcion_50caracteres {
+  height: 10%;
+  font-size: 8px;
+  margin-left: 20px;
+  margin-top: -4px;
+}
+
+.clave_sap {
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.precio {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.a,
+.de {
+  font-size: 9px;
+}
+
+.precio_ {
+  font-size: 10px;
+  text-decoration: line-through;
+  color: red;
+}
+
+.precio_descuento {
+  font-size: 25px;
+  margin-top: .5cm;
+}
+
+.contenedor_precio_sin_descuento {
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_precio_descuento {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  height: 5%;
+  margin-top: -3px;
+  margin-left: 21px;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+}
+
+.contenedor_logo_claveSAP {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+svg {
+  width: 100px;
+  height: 28px;
+}
+
+/* Desaparece los divs */
+.hide {
+  display: none !important;
+}

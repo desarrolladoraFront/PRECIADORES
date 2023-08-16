@@ -1,139 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;800&display=swap');
-    *{
-      padding: 0;
-      margin: 0;
-    }
-    body{
-        font-family: 'Poppins', sans-serif;
-    }
-    /* div{
-        margin: 4px;
-    }
-    .root{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-    .contenedor{
-      display: flex;
-      flex-direction: column;
-      border-style: dashed;
-      border-width: 1px;
-      padding: 1px;
-      width: 7cm;
-      height: 3.5cm;
-    }
-    .descripcion{
-        height: 15%;
-        font-size: 9px;
-    }
-    .descripcion_50caracteres{
-        height: 15%;
-        font-size: 9px;
-    }
-    .clave_sap{
-        font-size: 10px;
-    }
-    .precio{
-        display: flex;
-        justify-content: center;
-        font-size: 30px;
-    }
-    .a, .de {
-      font-size: 10px;
-    }
-    .precio_{
-      font-size: 10px;
-      text-decoration:line-through;
-      color: red;
-    }
-    .precio_descuento{
-      font-size: 30px;
-    }
-    .contenedor_precio_sin_descuento{
-      display: flex;
-      flex-direction: row;
-      height: 10%;
-      justify-content: center;
-    }
-    .contenedor_precio_descuento{
-      display: flex;
-      flex-direction: row;
-      justify-content: left;
-      height: 5%;
-      margin-top: -2px;
-    }
-    .logo{
-      width: 40px;
-      height: 40px;
-    }
-    .contenedor_logo_claveSAP{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      height: 20%;
-    }
-    svg{
-      width: 100px;
-      height: 30px;
-    } */
-    .hide{
-      display: none !important;
-    }
-    .loader {
-    position: absolute;
-    top: 10%;
-    left: 46%;
+body{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #FDC420;
+}
+/* Circunferencia de "cargando data" */
+.loader {
     border: 20px solid #EAF0F6;
     border-radius: 50%;
     border-top: 20px solid #FDC420;
     width: 100px;
     height: 100px;
     animation: spinner 4s linear infinite;
-  }
-  .titulo{
-    display: flex;
-    justify-content: center;
-    align-items:baseline;
-  }
-  @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  .modal { 
-  display: flex;/*Modal qué aparece al inicio: Portal de preciadores.*/
-  flex-direction: column;
-  align-items:flex-start;
-  justify-content: center;
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 10px;
-  left: 0;
-  top: 0; 
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: #3AFCCC;
 }
-.modal-contenido {
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Pantalla para resaltar modal y esconder el fondo de la apliación. */
+.modal {
+  background-color: white ;
+}
+/* Modal: para llenar los campos de generar etiquetas y de confirmación de creación de etiquetas */
+.modal-content { 
   background-color: #fefefe;
-  box-shadow: 5px 10px #FDC420;    
-  border-radius: 10px;
-  margin: 15% auto;
-  padding: 40px;
-  width: 80%;
-  max-width: 600px;
-  text-align: center;
+  margin-top: 10%;
+  margin: none;
+  border-radius: 8px;
+  padding: 20px;
+  width: 60%; 
 }
-
-.modal-contenido h2 {
-  margin-top: 0;
+/* Tamaño para el logo*/
+#logo{
+  width: 10%;
 }
-
+/* Desaparece los divs */
+.hide{
+   display: none !important; 
+}
+ /* Características de los botones */
 button {
-  margin-top: 20px;
   padding: 10px 20px;
   background-color: #FDC420;
   color: white;
@@ -142,7 +48,6 @@ button {
   cursor: pointer;
   font-family: 'Poppins', sans-serif
 }
-
 button:hover {
   background-color: #FE9114;
 }
@@ -152,30 +57,26 @@ button:hover {
 #CrearEtiquetas:hover{
  background-color:  #A10EB0;
 }
-.row {
-    display: flex;
-    width: 100%;
-    height: .30cm; ;
+.botones-contenedor{
+  justify-content: center;
 }
-.modal-content { /* Modal: Portal de preciadores*/
-  background-color: #fefefe;
-  margin:auto;
-  position: absolute;
-  bottom: 10%;
-  left: 20%;
-  padding: 40px;
-  width: 60%;
-  box-shadow: 5px 10px #FDC420;    
-  border-radius: 10px;
+input[type="radio"]:not(:checked) + label {
+  /* Estilo para botones desseleccionados */
+  opacity: 0.5;
+  /* Agrega cualquier otro estilo que desees */
 }
-
+.contenedor_bts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/*Span para cerrar el módulo*/
 .close, .close1 {
   float: right;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
 }
-
 .close:hover,
 .close:focus,
 .close1:hover,
@@ -184,29 +85,5 @@ button:hover {
   text-decoration: none;
   cursor: pointer;
 }
-.logo-titulo{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 15%;
-}
-#logo{
-  height: 10%;
-  width: 20%;
-}
-.botones-contenedor{
-  position: relative;
-  justify-content: center;
-}
-input[type="radio"]:not(:checked) + label {
-  /* Estilo para botones desseleccionados */
-  opacity: 0.5;
-  /* Agrega cualquier otro estilo que desees */
-}
-.contenedor_bts_borraryreiniciar{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+
+

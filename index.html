@@ -9,45 +9,54 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/@selectize/selectize/dist/js/selectize.js"></script>
   <link rel="stylesheet" href="node_modules/@selectize/selectize/dist/css/selectize.css">
-  <link rel="stylesheet" href="index.css">
-  <link id="stylesheet" rel="stylesheet" href="impresion_sin_plantilla.css">
+  <link class="bootstrap "rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" media="screen" href="index.css?v=1.0">
+  <link id="stylesheet" rel="stylesheet" href="plantilla_impresion.css?v=1.0">
   <title>Etiquetas </title>
 </head>
 
 <body>
-  <section id="myModal" class="modal">
-    <div class="modal-content" style="width: 50%;">
-      <div class="logo-titulo">
-        <h1>Portal de preciadores</h1>
+  <!-- Inicia div para advertencia de cargando datos-->
+  <div id="loader-message" class="d-block modal d-print-none:">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <h1>Espera la información está siendo cargada.</h1>
+      <div class="loader"></div>
+    </div>
+  </div>
+  <!-- Termina el div cargando datos -->
+
+  <!-- Inicia sección formulario para filtrar etiquetas-->
+  <section id="myModal" class="d-flex flex-lg-row justify-content-center d-print-none:">
+    <div class="modal-content">
+      <div class="d-flex flex-lg-row justify-content-sm-between align-items-center">
+        <h2>Portal de preciadores</h2>
         <img id="logo" src="https://i.postimg.cc/y8j19qhw/logo.png">
       </div>
       <div class="botones-contenedor">
-        <h3>Instrucciones </h3>
-        <p>En este sitio se crearan las hojas de impresión para obtener etiquetas con los productos. Para hacerlo sólo
-          necesitas seguir algunos pasos</p><br>
+        <h4>Instrucciones </h4>
+        <p>En este sitio podrás obtener la etiqueta de precios de todos nuestros productos Café Etrusca. Para hacerlo sigue las instrucciones.</p>
         <ol>
-          <li>Define el tipo de papel con el que cuentas en tu impresora:<br><br>
+          <!-- <li>Selecciona el tipo de papel con el que cuentas para hacer tus etiquetas:<br>
             <input type="checkbox" id="checkboxPlantilla">
-            <label for="checkboxPlantilla">Plantilla de etiquetas. (Sí necesitas verificar presiona <a
-                href="https://www.uline.mx/LabelTemplates/S-16643.pdf?webSyncID=1b9c737e-66e6-1a8a-3e63-0028501e432e&sessionGUID=58b0aad4-ce1c-dc9c-0654-cca45b226674">aquí</a>)</label><br>
+            <label for="checkboxPlantilla">Plantilla de etiquetas. (Sí necesitas verla para confirmar presiona
+              <a
+                href="https:
+                //www.uline.mx/LabelTemplates/S-16643.pdf?webSyncID=1b9c737e-66e6-1a8a-3e63-0028501e432e&sessionGUID=58b0aad4-ce1c-dc9c-0654-cca45b226674">
+                aquí</a>)</label><br>
             <input type="checkbox" id="checkbox" value="checked">
-            <label for="checkbox">Formato de impresión</label><br><br>
-          </li>
-          <li>Elegir un tipo de filtro:<br><br>
+            <label for="checkbox">Hoja adherible sin marcas de corte.</label><br>
+          </li> -->
+          <li>Elegir un tipo de filtro:<br>
             <input type="radio" id="btnClave" name="opcion" value="clave">
-            <label for="btnClave"><b>Clave: </b>escoge un rango de productos.</label><br>
+            <label for="btnClave"><b>Clave</b></label><br>
             <input type="radio" id="btnMarca" name="opcion" value="marca">
-            <label for="btnMarca"><b>Marca: </b>escribe la marca y selecciona.</label><br><br>
-          <li>Cuando hayas filtrado, presiona el botón de <b>crear etiquetas.</b></li>
-          <li><b>Espera</b> un par de segundos mientras se cargan los datos de tus etiquetas y se preparan para
-            imprimir.</li>
-          <li>Si te equivocaste, no te preocupes, presiona el boton <b>reiniciar.</b></li>
-          <li>Sí aún te quedan dudas, puedes ver este <a
-              href="https://www.youtube.com/watch?v=5I97D1x0Vgg&list=WL&index=27">video.</a></li>
-        </ol><br>
+            <label for="btnMarca"><b>Marca</b></label><br>
+          <li>Cuando hayas terminado de filtrar, presiona el botón de <b>crear etiquetas.</b></li>
+        </ol>
       </div>
-      <div style="display:none" id="contenedorSelect" class="contenedorSelect">
-        <p>De: </p>
+      <div style="display:none" id="contenedorSelect" class="contenedorSelect mt-1">
+        <p>Desde: </p>
         <select id="my-select" class="tabla" name="my-select" data-selectize></select>
         <p>Hasta:</p>
         <select id="my-select2" name="my-select2" data-selectize></select>
@@ -56,51 +65,73 @@
         <select id="my-select3" name="my-select" data-selectize></select>
       </div>
       <div>
-        <div class="contenedor_bts_borraryreiniciar hide">
-          <button id="CrearEtiquetas">Crear etiquetas</button>
+        <div class="mt-4 hide contenedor_bts">
           <button id="ReiniciarMarca" onclick="location.reload()">Reiniciar</button>
+          <button id="CrearEtiquetas">Siguiente</button>
         </div>
+      </div>
+      <br><div class="botones-contenedor mt-1">
+        <h4>Observaciones</h4>
+		<li style="color:red">Cuando llegues aquí, desde boletín actual o próximo <b>sólo tendras los productos del boletín.</b></li>
+        <li><b>Espera</b> un par de segundos mientras se cargan los datos de tus etiquetas y se preparan para
+          imprimir.</li>
+        <li>Si te equivocaste, no te preocupes, presiona el boton <b>reiniciar.</b></li>
+        <li>Sí aún te quedan dudas, puedes ver este <a
+            href="https://www.loom.com/share/1d36b552251b4d36b95440b2f7c3cb5b?sid=0dedfae1-9e95-4faa-8476-a72d5925461f">tutorial.</a></li>
       </div>
     </div>
   </section>
-  <div id="modal-instrucciones-imprimir" class="modal">
-    <div class="modal-contenido">
-      <span class="close">&times;</span>
-      <p>Para obtener tus etiquetas presiona el botón de imprimir, si te equivocaste, presiona "Quiero regresar".</p>
-      <br>
-      <h3 id="parametro1"></h3>
-      <h3 id="parametro2"></h3><br>
-      <p>*Recuerda que al hacerlo tienes que configurar la impresión en modo horizontal y tamaño carta. Verifica que
-        tengas papel y ¡éxito!* </p>
-      <button onclick="cerrarModal()">Imprimir etiquetas</button>
-      <button onclick="location.reload()">Quiero regresar</button>
-    </div>
-  </div>
-  <div id="espera-mientras carga">
-    <div class="loader"></div>
-    <div class="titulo">
-      <h1 class="h1">Espera la información está siendo cargada.</h1>
-    </div>
-  </div>
-  <div class="root">
-    <div class="contenedor hide">
-      <div class="contenedor_logo_claveSAP">
-        <img src="https://i.postimg.cc/y8j19qhw/logo.png" class="logo">
-        <div class="clave_sap">AAB-001</div>
-        <svg id="code"></svg>
-      </div>
-      <div class="descripcion">JARRA ESPUMADORA BARISTA SPACE DE ACERO INOXIDABLE TORNASOL 350ml</div>
-      <div class="contenedor_precio_sin_descuento">
-        <p class="de">de <del> $ 4,555</del> </p>
-        <p class="precio_"> </p>
-      </div>
-      <div class="contenedor_precio_descuento">
-        <p class="a">a</p>
-        <div class="precio_descuento">$ 5,555</div>
-      </div>
-    </div>
-  </div>
-</body>
-<script type="text/javascript" src="index.js"></script>
+  <!--Termina formulario para filtrar etiquetas-->
 
+  <!-- Inicia modal que te advierte lo que estás apunto de imprimir-->
+  <div id="modal-instrucciones-imprimir" class="modal d-print-none:">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <h6>Elegiste los siguientes datos:</h6><br>
+        <div class="container d-flex flex-lg-row justify-content-lg-around">
+          <h3 id="parametro1"></h3>
+          <h3> y </h3>
+          <h3 id="parametro2"></h3>
+        </div><br>
+        <h6>*Recuerda que al hacerlo tienes que configurar la impresión en modo vertical o landscape y tamaño carta.
+          Verifica que
+          tengas papel y ¡éxito!* </h6><br>
+        <div class="contenedor_bts">
+          <button onclick="location.reload()">Quiero regresar</button>
+          <button id="CrearEtiquetas" onclick="cerrarModal()">Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Termina modal la información qué estás apunto de filtrar-->
+
+  <!-- Inicia root qué es donde se renderizan las etiquetas -->
+  <div class="container-root " id="container-root" >
+    <div class="root hide">
+      <div class="contenedor hide">
+        <div class="contenedor_logo_claveSAP">
+          <img src="./logo.png" crossorigin="anonymous" class="logo">
+          <div class="clave_sap">AAB-001</div>
+          <svg id="code"></svg>
+        </div>
+        <div class="descripcion">JARRA ESPUMADORA BARISTA SPACE DE ACERO INOXIDABLE TORNASOL 350ml</div>
+        <div class="contenedor_precio_sin_descuento">
+          <p class="de">DE<del> $ 4,555</del> </p>
+          <p class="precio_"> </p>
+        </div>
+        <div class="contenedor_precio_descuento">
+          <p class="a">A</p>
+          <div class="precio_descuento">$ 5,555</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Termina contenedor donde se generan las etiquetas-->
+
+</body>
+
+<script type="text/javascript" src="index.js?v=1.011"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js?v=1.01"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.5/canvg.min.js?v=1.01"></script>
 </html>
